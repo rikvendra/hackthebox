@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ app_name }}</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f5f6fa;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background: #0d47a1;
+        color: #fff;
+        padding: 1rem 1.5rem;
+      }
+      main {
+        padding: 2rem;
+      }
+      .card {
+        background: #fff;
+        border-radius: 6px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        max-width: 750px;
+        margin-bottom: 1rem;
+      }
+      code {
+        background: #eaf1ff;
+        padding: 0.1rem 0.4rem;
+        border-radius: 3px;
+      }
+      footer {
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>{{ app_name }}</h1>
+      <p>RajptRishi internal dashboards | {{ timestamp.strftime('%Y-%m-%d %H:%M UTC') }}</p>
+    </header>
+    <main>
+      <div class="card">
+        <h2>Operational Insights</h2>
+        <p>
+          This dashboard serves as the internal DevOps telemetry console. GraphQL
+          telemetry is available over <code>/graphql</code> for automation integrations.
+        </p>
+      </div>
+      <div class="card">
+        <h2>GraphQL Endpoint</h2>
+        <p>
+          Experiment with queries and mutations using the interactive GraphiQL UI.
+          Authentication is handled via corporate SSO tokens, but debug tooling
+          is enabled for internal developers. The telemetry team still injects
+          a trace header (`X-DevOps-Trace`) for staging for deeper diagnostics.
+        </p>
+        <p>Accessible endpoint: <code>/graphql</code></p>
+        <!-- Trace header hint: check developer notes for the current value -->
+      </div>
+    </main>
+    <footer>RajptRishi Inc. • Keep the pipelines humming.</footer>
+  </body>
+</html>
